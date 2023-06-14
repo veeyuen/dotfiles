@@ -4,7 +4,7 @@ ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="robbyrussell"
 
 # Useful oh-my-zsh plugins for Le Wagon bootcamps
-plugins=(git gitfast last-working-dir common-aliases zsh-syntax-highlighting history-substring-search)
+plugins=(git gitfast last-working-dir common-aliases zsh-syntax-highlighting history-substring-search direnv)  # added direnv
 
 # (macOS-only) Prevent Homebrew from reporting - https://github.com/Homebrew/brew/blob/master/docs/Analytics.md
 export HOMEBREW_NO_ANALYTICS=1
@@ -70,3 +70,23 @@ export EDITOR=code
 
 # Set ipdb as the default Python debugger
 export PYTHONBREAKPOINT=ipdb.set_trace
+
+export GOOGLE_APPLICATION_CREDENTIALS="/Users/veesheenyuen/Desktop/DataScience/Keys/wagon-data-engineering-65ce61b4c101.json"
+
+#PYTHONPATH ROOT
+export PYTHONPATH="/Users/veesheenyuen/code/veeyuen/data-context-and-setup:$PYTHONPATH"
+eval "$(direnv hook zsh)"
+
+source /Users/veesheenyuen/.docker/init-zsh.sh || true
+# Added by Docker Desktop
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc' ]; then . '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc' ]; then . '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc'; fi
+
+
+#MySQL
+export PATH=${PATH}:/usr/local/mysql/bin
+eval "$(direnv hook zsh)"
